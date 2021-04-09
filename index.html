@@ -1,0 +1,103 @@
+<html>
+
+    <head>
+
+        <title>
+
+            MDD Technology
+
+        </title>
+        
+
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            
+                        #ul1{
+                width: 60%;
+                margin: 10px 26%;
+                padding-bottom: 10px;
+                
+
+            }
+            .h11{
+                color: white;background-color: blue; padding-left:20px; position: center;
+            }
+            #input1{
+                width: 55%;
+                height: 5%;
+                margin: 10% 25% 0 ;
+            }
+            
+        ul {
+            list-style: none;
+        }
+        li {
+  padding-top: 10px;
+}
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        </style>
+
+
+    </head>
+
+
+    <body>
+        <h1 class="h11">MDD Technology Internship Project</h1>
+
+        <input type="text" id="input1" onkeyup="funcSearch()" placeholder="search indian billlionaires..... " >
+        <ul id="ul1" style="display: none;">
+            <li><a href="https://en.wikipedia.org/wiki/Mukesh_Ambani">Mukesh Ambani</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Gautam_Adani">Gautam Adani</a></li>
+
+            <li><a href="https://en.wikipedia.org/wiki/Shiv_Nadar">Shiv Nadar</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Radhakishan_Damani">RadhaKishan Damani</a></li>
+            
+            <li><a href="https://en.wikipedia.org/wiki/Uday_Kotak">Uday Kotak</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Lakshmi_Mittal">Lakshmi Mittal</a></li>
+
+            <li><a href="https://en.wikipedia.org/wiki/Azim_Premji">Azim Premji</a></li>
+        </ul>
+
+
+
+
+
+        <script>
+
+            function funcSearch() {
+                var input2 = document.getElementById('input1');
+                var myfilter = input2.value.toUpperCase();
+                var ul2 = document.getElementById('ul1');
+                var li1 = ul2.getElementsByTagName('li');
+                
+                for (var i=0; i<li1.length;i++){
+
+                    var a  = li1[i].getElementsByTagName('a')[0];
+                    atext = a.textContent || a.innerText;
+                    
+                    if (atext.toUpperCase().indexOf(myfilter)>-1){
+                        document.getElementById('ul1').style.display="list-item";
+                        li1[i].style.display="";
+                    }
+                    
+                    else{
+                        li1[i].style.display="none";
+                    }
+
+                }
+
+
+
+            }
+
+
+        </script>
+
+    </body>
+</html>
